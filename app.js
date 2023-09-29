@@ -12,9 +12,9 @@ app.get('/token', (_, response) => {
     response.json(token);
 });
 
-app.post('/', (request, response) => {
+app.patch('/', (request, response) => {
     if (authorize(request) == userName) {
-        console.log(`PACS has created study ${request.body.StudyInstanceUid}`);
+        console.log(`PACS has created study ${request.body.studyInstanceUid}`);
     }
     else {
         response.statusCode = 401;
