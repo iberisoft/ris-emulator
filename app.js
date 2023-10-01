@@ -14,7 +14,7 @@ app.get('/token', (_, response) => {
 
 app.patch('/', (request, response) => {
     if (authorize(request) == userName) {
-        console.log(`PACS has created study ${request.body.studyInstanceUid}`);
+        console.log(`PACS has created study ${request.body[0].study_instance_uid}`);
     }
     else {
         response.statusCode = 401;
